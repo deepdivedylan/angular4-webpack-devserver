@@ -1,1 +1,20 @@
 <h1>User Component</h1>
+
+<table class="table table-bordered table-responsive table-striped">
+	<tr>
+		<th>Id</th>
+		<th>Name</th>
+		<th>Username</th>
+		<th>Email</th>
+		<th>Phone</th>
+		<th>Website</th>
+	</tr>
+	<tr *ngFor="let user of users">
+		<td>{{ user.id }}</td>
+		<td>{{ user.name }}</td>
+		<td>{{ user.username }}</td>
+		<td><a [href]="'mailto:' + user.email">{{ user.email }}</a></td>
+		<td>{{ user.phone }}</td>
+		<td><a [href]="'https://' + user.website + '/'">https://{{ user.website }}/</a></td>
+	</tr>
+</table>
