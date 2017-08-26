@@ -1,0 +1,12 @@
+<div *ngIf="user !== null; else notFound">
+	<h1>User Detail: User {{ user.id }}</h1>
+	<ul>
+		<li>{{ user.id }}</li>
+		<li>{{ user.name }}</li>
+		<li>{{ user.username }}</li>
+		<li><a [href]="'mailto:' + user.email">{{ user.email }}</a></li>
+		<li>{{ user.phone }}</li>
+		<li><a [href]="'https://' + user.website + '/'">https://{{ user.website }}/</a></li>
+	</ul>
+</div>
+<ng-template #notFound><h1>404 User Not Found</h1></ng-template>
