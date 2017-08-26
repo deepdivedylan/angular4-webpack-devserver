@@ -15,13 +15,13 @@ export class UserService extends BaseService {
 
 	getAllUsers() : Observable<User[]> {
 		return(this.http.get(this.userUrl)
-			.map(this.extractData)
+			.map(this.extractAll)
 			.catch(this.handleError));
 	}
 
 	getUserByUserId(userId : number) : Observable<User> {
 		return(this.http.get(this.userUrl + userId)
-			.map(this.extractData)
+			.map(this.extractAll)
 			.catch(this.handleError));
 	}
 }
